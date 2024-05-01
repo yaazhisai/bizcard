@@ -193,12 +193,24 @@ def select_data():
     output += [list(x)[0] for x in myresult]
     return output
 
+def view_data():
+    connection = mysql.connector.connect(host='localhost',
+                                        user='root',
+                                        password='')
+    mycursor = connection.cursor()
+    mycursor.execute('USE biz')
+    query="SELECT * FROM bizdata"
+    result_df=pd.read_sql(query,connection,columns=("id","name","designation","phone","website","email","area","city","state","pincode","image"))
+    st.dataframe(result_df[["id","name","designation","phone","website","email","area","city","state","pincode"]])
+    connection.close()
+
+
 
 # Display streamlit title
 st.title("BizCardX: Extracting Business Card Data with OCR")
 
 # Display a select box with the list of options
-option=st.selectbox('Choose your activity',['','UPLOAD THE IMAGE','EXTRACT THE CARD DETAILS','SAVE TO MYSQL','MODIFY THE CARD DETAILS','DELETE THE CARD DETAILS'])
+option=st.selectbox('Choose your activity',['','UPLOAD THE IMAGE','EXTRACT THE CARD DETAILS','SAVE TO MYSQL','VIEW ALL','MODIFY THE CARD DETAILS','DELETE THE CARD DETAILS'])
 filename = ''
 
 # Upload image
@@ -240,6 +252,8 @@ elif option=='SAVE TO MYSQL':
             st.write("No info available for upload!!!")
     else:
         st.write("No info available for upload!!!")
+elif option=='VIEW ALL':
+    view_data()
 elif option=='MODIFY THE CARD DETAILS':
     st.header("select the name to modify the details")
     names_list = select_data()
