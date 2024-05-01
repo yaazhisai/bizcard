@@ -25,5 +25,15 @@ card image and extracting its information.
 5. Implement database integration: Use MySQL to store the extracted information along with the uploadedbusiness card image. You can use SQL queries to create tables, insert data,and retrieve data from the database, Update the data and Allow the user todelete the data through the streamlit UI
 6. Testing and optimising the code whereever it is needed
 
+Functions used in this project:
+            1.extract()-->To extract info from the card using ocr 
+            2.convert_data()--->convert the image file to binary
+            3.db_connection()--->establish the mysql connection
+            4.upload()--->To upload the image in the dashboard
+            5.modify()---->This allow the user to modify the data and save it to db
+            6.delete_data()--->This allow the user to delete the data from db
+            7.select_data()-->This allow the user to select the data to modify or delete from db
+            8.view_data()--->This allow the user to view the data saved in the db
+
 Overall, the result of this project would be a useful tool for businesses and individuals who need to manage business card information efficiently.
 
