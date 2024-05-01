@@ -1,9 +1,13 @@
-BizCardX: Extracting Business Card Data with OCR
+                                      BizCardX: Extracting Business Card Data with OCR
+
+
+
 TECHNOLOGIES USED:OCR,streamlit GUI, SQL,Data Extraction,pandas
                   pandas: Used to create DataFrames for data manipulation and storage.
                   mysql.connector: Used to store and retrieve data from a MySQL database.
                   streamlit: Used to create a graphical user interface for users.
                   easyocr: Used for text extraction from business card images.
+
 
 BizCardX project that allows users to upload an image of a business card and extract relevant information from it using easy Optical Character Recognition (OCR).OCR is a Python package that developers to effortlessly perform Optical Character Recognition.It is a Python library for Optical Character Recognition (OCR) that allows you to easily extract text from images and scanned documents.The extracted information includes the company name, card holder name, designation, mobile number, email address, website, area, city, state, and pin code.The extracted information would be displayed in a clean and organized manner.
 The users can save it to a database.Once saved, Users can also view , update, and delete the stored data through the streamlit dashboard.
